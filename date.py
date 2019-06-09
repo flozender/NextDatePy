@@ -1,4 +1,9 @@
-day,month,year = map(int,input("Enter date:").split("-"))
+mydate=input("Enter date:")
+if "-" in mydate:
+    day,month,year = map(int,mydate.split("-"))
+elif "/" in mydate:
+    day,month,year = map(int,mydate.split("/"))
+
 
 if (year % 400 == 0):
     leap_year = True
@@ -34,7 +39,7 @@ if (day <= 31):
               month += 1
 else:
     print("Enter date properly")
-        
-print("The next date is %d-%d-%d." % (day, month, year))
-if (day,month,year = map(int,input("Enter date:").split("/"))):
+if "-" in mydate:
     print("The next date is %d-%d-%d." % (day, month, year))
+if "/" in mydate:
+    print("The next date is %d/%d/%d." % (day, month, year))
